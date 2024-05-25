@@ -21,36 +21,155 @@
                 <ul class="header__list">
                     <li class="list__item">test</li>
                     <li class="list__item">test</li>
-                    <li class="list__item" id="log-in">Log-in</li>
+                    <li class="list__item" id="log-in">Sign up</li>
                 </ul>
             </nav>
         </header>
 
-        <div class="modal__screen" id="modal-screen">
+        <div class="modal__screen" id="modal-screen"> <!-- Modal Screen -->
             <div class="modal__shadow"></div>
             <button class="modal__toggle" id="modal-toggle">
                 <div class="modal-toggle__item"></div>
                 <div class="modal-toggle__item"></div>
             </button>
-            <form action="" class="modal__group">
-                <div class="modal__item">
-                    <input type="text" name="name" id="userName" class="username" placeholder="User Name" autocomplete="off">
+            <div class="modal__group hide" id="modalGroup"> <!-- Register -->
+                <div class="modal__container userName__container">
+                    <label class="modal__item">
+                        <input type="text" maxlength="10" name="name" id="userName" class="username" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="placeholded__container">
+                            <div class="modal__placeholder" id="placeholderName">
+                                <span class="span">
+                                    User Name
+                                </span>
+                            </div>
+                            <div class="placeholder__counter">
+                                <span class="span" id="counter"></span>
+                            </div>
+                        </div>
+                    </label>
                     <div class="notification" id="loginNotification"></div>
                 </div>
-                <div class="modal__item">
-                    <input type="email" name="email" id="email" class="email" placeholder="Email" autocomplete="off">
+                <div class="modal__container email__container">
+                    <label class="modal__item">
+                        <input type="email" name="email" id="email" class="email" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="modal__placeholder" id="placeholderEmail">
+                            <span class="span">
+                                Email
+                            </span>
+                        </div>
+                    </label>
                     <div class="error" id="error"></div>
                 </div>
-                <div class="modal__item">
-                    <input type="password" name="password" id="password" class="password" placeholder="Password" autocomplete="off">
+                <div class="modal__container">
+                    <label class="modal__item">
+                        <input type="password" name="password" id="password" class="password" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="modal__placeholder" id="placeholderPassword">
+                            <span class="span">
+                                Password
+                            </span>
+                        </div>
+                    </label>
                     <div class="notification" id="passwordNotification"></div>
                 </div>
-                <div class="modal__item">
-                    <input type="password" name="confirmPassword" id="confirmPassword" class="confirmPassword" placeholder="Confirm Password" autocomplete="off">
+                <div class="modal__container password__container">
+                    <label class="modal__item">
+                        <input type="password" name="confirmPassword" id="confirmPassword" class="confirmPassword" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="modal__placeholder" id="placeholderConfirmPassword">
+                            <span class="span">
+                                Confirm Password
+                            </span>
+                        </div>
+                    </label>
+                    <div class="notification" id="confirmPasswordNotification"></div>
                 </div>
+                <div class="register__container">
+                    <button class="register__button button__style--reset" id="registerCancel">Later</button>
+                    <button class="register__button button__style--reset" id="registerConfirm">Register</button>
+                </div>
+                <button class="flip__login button__style--reset" id="replaceToLogin">
+                    <div class="flip__item"></div>
+                    <div class="flip__item"></div>
+                </button>
+                <hr role="separator" aria-orientation="horizontal" class="separator">
+                <div class="signup">Wellcome back!
+                    <label for="#">Login</label>
+                </div>
+            </div><!-- /modal register -->
+            
+            <div class="modal__group" id="loginGroup"> <!-- Register -->
+                <div class="modal__container userName__container">
+                    <label class="modal__item">
+                        <input type="text" maxlength="10" name="name" id="userName" class="username" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="placeholded__container">
+                            <div class="modal__placeholder" id="placeholderName">
+                                <span class="span">
+                                    User Name
+                                </span>
+                            </div>
+                            <div class="placeholder__counter">
+                                <span class="span" id="counter"></span>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="notification" id="loginNotification"></div>
+                </div>
+                <div class="modal__container email__container">
+                    <label class="modal__item">
+                        <input type="email" name="email" id="email" class="email" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="modal__placeholder" id="placeholderEmail">
+                            <span class="span">
+                                Email
+                            </span>
+                        </div>
+                    </label>
+                    <div class="error" id="error"></div>
+                </div>
+                <div class="modal__container">
+                    <label class="modal__item">
+                        <input type="password" name="password" id="password" class="password" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="modal__placeholder" id="placeholderPassword">
+                            <span class="span">
+                                Password
+                            </span>
+                        </div>
+                    </label>
+                    <div class="notification" id="passwordNotification"></div>
+                </div>
+                <div class="modal__container password__container">
+                    <label class="modal__item">
+                        <input type="password" name="confirmPassword" id="confirmPassword" class="confirmPassword" placeholder="" autocomplete="off">
+                        <button class="reset__button" type="button"></button>
+                        <div class="modal__placeholder" id="placeholderConfirmPassword">
+                            <span class="span">
+                                Confirm Password
+                            </span>
+                        </div>
+                    </label>
+                    <div class="notification" id="confirmPasswordNotification"></div>
+                </div>
+                <div class="register__container">
+                    <button class="register__button button__style--reset" id="registerCancel">Later</button>
+                    <button class="register__button button__style--reset" id="registerConfirm">Login</button>
+                </div>
+                <button class="flip__login button__style--reset" id="replaceToLogin">
+                    <div class="flip__item"></div>
+                    <div class="flip__item"></div>
+                </button>
+                <hr role="separator" aria-orientation="horizontal" class="separator">
+                <div class="signup">Don't have an account?
+                    <label for="#">SignUp</label>
+                </div>
+            </div><!-- /modal register -->
 
-            </form>
-        </div>
+
+        </div><!-- /Modal screen -->
 
     </div>
 

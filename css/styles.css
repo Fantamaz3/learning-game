@@ -6,16 +6,23 @@
 
 
 body {
-    background-color: #210b4b;
+    background-color: #e2e2e2;
 }
+
 .container {
     max-width: 1230px;
     width: 100%;
     height: 700px;
     margin: 0 auto;
-    background-color: #382d4e;
+    background-color: #0d6069;
 }
 
+.button__style--reset {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+}
 /* Burger */
 
 .nav__toggle {
@@ -92,7 +99,7 @@ body {
 .modal__screen {
     display: none;
     width: 400px;
-    height: 500px;
+    height: auto;
     justify-content: center;
     position: relative;
     z-index: 2;
@@ -124,7 +131,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 350px;
+    width: 100%;
     align-items: center;
 }
 
@@ -132,30 +139,35 @@ body {
     border: none;
     width: 100%;
     padding-left: 5px;
-    padding-top: 20px;
-    margin-bottom: 10px;
+    /* padding-top: 20px; */
+    /* margin-bottom: 10px; */
 
     background-color: rgb(0 0 0 / 0%);
-    border: 1px solid white;
+    /* border: 1px solid white; */
     color: white;
 
     font-weight: bold;
     font-size: 15px;
-}
-
-::placeholder {
-    color: rgb(190, 190, 190);
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
 }
 
 input:focus {
     outline: none;
     outline-offset: 0;
     font-weight: bold;
-    border-bottom: 2px solid #d098f0
+    border: none;
 }
 
-input:hover {
-    background-color: #372e47;
+.modal__container {
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+}
+
+.modal__container:first-child {
+    margin-top: 50px;
 }
 
 .modal__item {
@@ -167,6 +179,82 @@ input:hover {
     width: 300px;
     height: 70px;
     background-color: rgb(0 0 0 / 0%);
+    border-radius: 8px;
+    border: 1px solid white;
+    z-index: 1;
+}
+
+.reset__button {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+    display: flex;
+    right: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+}
+
+.reset__button:before {
+    content: "";
+    width: 5px;
+    height: 20px;
+    background-color: #5f5a5a;
+    position: absolute;
+    right: 13px;
+    z-index: 1;
+    transform: rotate(-45deg);
+}
+
+.reset__button:after {
+    content: "";
+    width: 5px;
+    height: 20px;
+    background-color: #5f5a5a;
+    position: absolute;
+    right: 13px;
+    z-index: 1;
+    transform: rotate(45deg);
+}
+
+.reset__button:hover:before,
+.reset__button:hover:after {
+    background-color: #797373;
+}
+
+.placeholded__container {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__placeholder {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.1s ease, font-size 0.15s ease;
+    color: #7b7a78;
+    pointer-events: none;
+}
+
+.placeholder__counter {
+    padding: 8px;
+}
+
+.span {
+    color: inherit;
+    font-size: inherit;
+    user-select: none;
 }
 
 .modal__toggle {
@@ -203,18 +291,135 @@ input:hover {
     transform: rotate(45deg);
 }
 
-.modal__group .invalid {
-    border-bottom-color: red;
+.invalid {
+    box-shadow: red 0 0 5px 1px;
+    border: 1px red solid;
+}
+
+.register__container {
+    display: flex;
+    width: inherit;
+    user-select: none;
+    justify-content: space-around;
+}
+
+.register__button {
+    width: 6.5rem;
+    height: 30px;
+    background-color: #55D6BE;
+    border-radius: 8px;
+    transition: background-color .2s linear;
+}
+
+.register__button:nth-of-type(1) {
+    background-color: #ffffff;
+}
+
+.register__button:nth-of-type(1):hover {
+    background-color: #b3b3b3;
+}
+
+.register__button:nth-of-type(2):hover {
+    background-color: #ACFCD9;
+}
+
+.separator {
+    background-color: #d6d6d6;
+    width: 100%;
+}
+
+.signup {
+    font-size: 17px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.signup label {
+    color: #55D6BE;
+    cursor: pointer;
+    transition: color .2s linear;
+}
+
+.signup label:hover {
+    color: #ACFCD9;
+    text-decoration: underline;
+}
+
+/* flip button */
+.flip__login {
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    right: 0;
+    width: 20px;
+    height: 25px;
+    margin-right: 10px;
+    transition: transform .2s linear;
+}
+
+.flip__login:hover {
+    transform: rotateX(180deg);
+}
+
+.flip__item {
+    display: flex;
+    width: 3px;
+    height: 25px;
+    background-color: wheat;
+    position: relative;
+    left: 0;
+    border-radius: 8px;
+}
+
+.flip__item:last-child {
+    right: 0;
+    left: auto;
+}
+
+.flip__item:last-child:before {
+    bottom: 0;
+    transform-origin: bottom;
+    transform: rotate(38deg) translateY(1px) translateX(0px);
+}
+
+.flip__item:last-child:after {
+    bottom: 0;
+    transform-origin: bottom;
+    transform: rotate(-38deg) translateY(1px) translateX(0px);
+}
+
+.flip__item:before {
+    content: "";
+    width: 3px;
+    height: 10px;
+    background-color: wheat;
+    position: absolute;
+    transform: rotate(38deg) translateY(-1px) translateX(0px);
+    transform-origin: top;
+    border-radius: 8px;
+}
+
+.flip__item:after {
+    content: "";
+    width: 3px;
+    height: 10px;
+    background-color: wheat;
+    position: absolute;
+    right: 0;
+    transform: rotate(-38deg) translateY(-1px) translateX(0px);
+    transform-origin: top;
+    border-radius: 8px;
 }
 
 #error {
     color: red;
+    padding: 2px;
 }
 
 .notification {
     height: 10px;
     color: wheat;
-    position: absolute;
+    padding: 2px;
 
     left: 0;
     bottom: 0;
@@ -222,8 +427,10 @@ input:hover {
 
 .error {
     height: 10px;
-    position: absolute;
-
     left: 0;
     bottom: 0;
+}
+
+.hide {
+    display: none;
 }
